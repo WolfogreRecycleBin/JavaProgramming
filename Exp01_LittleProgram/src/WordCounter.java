@@ -15,25 +15,33 @@ public class WordCounter {
 		String regex = "[\\s\\d\\p{Punct}]+";
 		return mBaseString.split(regex).length;
 	}
-	public void GetCharCount(Integer numCount, Integer letterCount, Integer punCount)
+	public int GetNumCount()
 	{
-		numCount = 0;
-		letterCount = 0;
-		punCount = 0;
+		int count = 0;
 		for(int i = 0; i < mBaseString.length(); ++i)
-		{
 			if(mBaseString.charAt(i) >= '0' && mBaseString.charAt(i) <= '9')
-			{
-				++numCount;
-				continue;
-			}
-			if(mBaseString.charAt(i) >= 'a' && mBaseString.charAt(i) <= 'z'
-					|| mBaseString.charAt(i) >= 'A' && mBaseString.charAt(i) <= 'Z')
-			{
-				++letterCount;
-				continue;
-			}
-			++punCount;
-		}
+				++count;
+		return count;
+
+	}
+	public int GetLetterCount()
+	{
+		int count = 0;
+		for(int i = 0; i < mBaseString.length(); ++i)
+		if(mBaseString.charAt(i) >= 'a' && mBaseString.charAt(i) <= 'z'
+				|| mBaseString.charAt(i) >= 'A' && mBaseString.charAt(i) <= 'Z')
+			++count;
+		return count;
+
+	}
+	public int GetPunCount()
+	{
+		int count = 0;
+		for(int i = 0; i < mBaseString.length(); ++i)
+		if(!(mBaseString.charAt(i) >= 'a' && mBaseString.charAt(i) <= 'z'
+				|| mBaseString.charAt(i) >= 'A' && mBaseString.charAt(i) <= 'Z'
+				|| mBaseString.charAt(i) >= '0' && mBaseString.charAt(i) <= '9'))
+			++count;
+		return count;
 	}
 }

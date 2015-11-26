@@ -13,10 +13,8 @@ public class Program {
 		{
 			System.out.println(str);
 		}
-		Integer numCount = 0, letterCount = 0, punCount = 0;
-		wordCounter.GetCharCount(numCount, letterCount, punCount);
-		System.out.println("There are " + numCount.intValue() + " numbers, " + 
-				+ letterCount.intValue() + " letters and "
-				+ punCount.intValue() + " punctuations.");
+		System.out.println("There are " + wordCounter.GetNumCount() + " numbers, " + 
+				+ wordCounter.GetLetterCount() + " letters and "
+				+ wordCounter.GetPunCount() + " punctuations.");
 	}
 }

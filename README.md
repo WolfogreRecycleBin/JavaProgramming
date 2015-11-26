@@ -1,1 +1,1 @@
-# SJX
+# Java Programming

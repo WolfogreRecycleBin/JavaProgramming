@@ -1,3 +1,7 @@
+/.metadata/
+/.recommenders/
+
+/bin/
 *.class
 
 # Package Files #

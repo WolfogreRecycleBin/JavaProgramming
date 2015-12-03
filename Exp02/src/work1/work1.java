@@ -1,9 +1,9 @@
 package work1;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class work1 {
+	@SuppressWarnings("resource")
 	public static void main(String args[])
 	{
 		System.out.println("请输入3个1-100的整数:");

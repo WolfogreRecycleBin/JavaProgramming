@@ -36,25 +36,25 @@ public class Analyser {
 		return analyHelp(expression.substring(0, index)) / analyHelp(expression.substring(index + 1, expression.length()));
 	}
 	
-	public static int findLastOperator(String expression){
+	private static int findLastOperator(String expression){
 		for(int  i = expression.length() - 1; i >= 0; --i){
-			if(isAddOrSub(expression.charAt(i)) && i != 0 && !isAddOrSub(expression.charAt(i - 1)))
+			if(isAddOrSub(expression.charAt(i)) && i != 0 && !isOperator(expression.charAt(i - 1)))
 				return i;
 		}
 		for(int  i = expression.length() - 1; i >= 0; --i){
-			if(isOperator(expression.charAt(i)) && i != 0 && !isAddOrSub(expression.charAt(i - 1)))
+			if(isOperator(expression.charAt(i)) && i != 0 && !isOperator(expression.charAt(i - 1)))
 				return i;
 		}
 		return -1;
 	}
 	
-	public static boolean isAddOrSub(char ch){
+	private static boolean isAddOrSub(char ch){
 		if(ch == operators[0] || ch == operators[1])
 			return true;
 		return false;
 	}
 	
-	public static boolean isOperator(char ch){
+	private static boolean isOperator(char ch){
 		if(ch == operators[2] || ch == operators[3])
 			return true;
 		return isAddOrSub(ch);

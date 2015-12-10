@@ -12,7 +12,7 @@ public class TestGobangSever_Client {
 			Scanner inFromUser = new Scanner(System.in);
 		    @SuppressWarnings("resource")
 			DatagramSocket clientSocket = new DatagramSocket();
-		    InetAddress IPAddress = InetAddress.getLocalHost();
+		    InetAddress IPAddress = InetAddress.getByName("115.28.191.67");
 		    byte[] sendData = new byte[1024];
 		    byte[] receiveData = new byte[1024];
 		    String sentence = inFromUser.nextLine();

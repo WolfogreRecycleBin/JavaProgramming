@@ -47,13 +47,14 @@ public class GobangServer {
             DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
             while(true){
             	serverSocket.receive(receivePacket);
-                String sentence = new String( receivePacket.getData());
-                System.out.println("RECEIVED: " + sentence);
-                InetAddress IPAddress = receivePacket.getAddress();
-                int port = receivePacket.getPort();
-                sendData = sentence.getBytes();
-                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
+                String reveiveStr = new String( receivePacket.getData());
+                reveiveStr = reveiveStr.substring(0,reveiveStr.indexOf(0));
+                System.out.println("收到\"" + reveiveStr + "\"from:"+ receivePacket.getAddress() + ":" + receivePacket.getPort());
+                String sendStr = "确认:" + reveiveStr;
+                sendData = sendStr.getBytes();
+                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, receivePacket.getAddress(), receivePacket.getPort());
                 serverSocket.send(sendPacket);
+                System.out.println("发送\"" + sendStr + "\"to:"+ receivePacket.getAddress() + ":" + receivePacket.getPort());
             }
 		}catch(Exception ex){
 			throw new Exception("服务端崩溃", ex);

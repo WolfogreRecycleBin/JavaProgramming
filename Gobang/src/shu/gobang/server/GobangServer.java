@@ -3,6 +3,7 @@ package shu.gobang.server;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.List;
 
 
 /**
@@ -42,17 +43,18 @@ public class GobangServer {
 		byte[] receiveData = new byte[1024];
         byte[] sendData = new byte[1024];
 		try{
-            DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
             System.out.println("服务端监听中...");
-            serverSocket.receive(receivePacket);
-            String sentence = new String( receivePacket.getData());
-            System.out.println("RECEIVED: " + sentence);
-            InetAddress IPAddress = receivePacket.getAddress();
-            int port = receivePacket.getPort();
-            String capitalizedSentence = sentence.toUpperCase();
-            sendData = capitalizedSentence.getBytes();
-            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
-            serverSocket.send(sendPacket);
+            DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+            while(true){
+            	serverSocket.receive(receivePacket);
+                String sentence = new String( receivePacket.getData());
+                System.out.println("RECEIVED: " + sentence);
+                InetAddress IPAddress = receivePacket.getAddress();
+                int port = receivePacket.getPort();
+                sendData = sentence.getBytes();
+                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
+                serverSocket.send(sendPacket);
+            }
 		}catch(Exception ex){
 			throw new Exception("服务端崩溃", ex);
 		}

@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Exp02/Exp02.iml" filepath="$PROJECT_DIR$/Exp02/Exp02.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exp03/Exp03.iml" filepath="$PROJECT_DIR$/Exp03/Exp03.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exp04/Exp04.iml" filepath="$PROJECT_DIR$/Exp04/Exp04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GamePlatform/GamePlatform.iml" filepath="$PROJECT_DIR$/GamePlatform/GamePlatform.iml" />
     </modules>
   </component>
 </project>

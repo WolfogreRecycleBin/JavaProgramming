@@ -3,3 +3,4 @@ JavaProgramming.iws
 .idea/dataSources.local.xml
 out/
 .idea/workspace.xml
+*.class

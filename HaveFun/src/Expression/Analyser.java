@@ -1,7 +1,8 @@
 package Expression;
 
 public class Analyser {
-	public static double analy(String expression) throws Exception{
+	public static double analyse(String expression) throws Exception{
+		expression = expression.replace(" ", "");
 		expression = expression.replace('＋', operators[0]);
 		expression = expression.replace('－', operators[1]);
 		expression = expression.replace('×', operators[2]);
@@ -13,7 +14,7 @@ public class Analyser {
 				throw new Exception("输入有误");
 		}
 		try{
-			return analyHelp(expression);
+			return analyseHelp(expression);
 		}
 		catch(Exception ex){
 			throw new Exception("输入有误");
@@ -22,18 +23,18 @@ public class Analyser {
 	
 	private static char[] operators = {'+','-','*','/'};
 	
-	private static double analyHelp(String expression)
+	private static double analyseHelp(String expression)
 	{
 		int index = findLastOperator(expression);
 		if(index == -1)
 			return Double.parseDouble(expression);
 		if(expression.charAt(index) == operators[0])
-			return analyHelp(expression.substring(0, index)) + analyHelp(expression.substring(index + 1, expression.length()));
+			return analyseHelp(expression.substring(0, index)) + analyseHelp(expression.substring(index + 1, expression.length()));
 		if(expression.charAt(index) == operators[1])
-			return analyHelp(expression.substring(0, index )) - analyHelp(expression.substring(index + 1, expression.length()));
+			return analyseHelp(expression.substring(0, index )) - analyseHelp(expression.substring(index + 1, expression.length()));
 		if(expression.charAt(index) == operators[2])
-			return analyHelp(expression.substring(0, index)) * analyHelp(expression.substring(index + 1, expression.length()));
-		return analyHelp(expression.substring(0, index)) / analyHelp(expression.substring(index + 1, expression.length()));
+			return analyseHelp(expression.substring(0, index)) * analyseHelp(expression.substring(index + 1, expression.length()));
+		return analyseHelp(expression.substring(0, index)) / analyseHelp(expression.substring(index + 1, expression.length()));
 	}
 	
 	private static int findLastOperator(String expression){
@@ -49,14 +50,24 @@ public class Analyser {
 	}
 	
 	private static boolean isAddOrSub(char ch){
-		if(ch == operators[0] || ch == operators[1])
-			return true;
-		return false;
+		/*What IntelliJ IDEA told me, amazing！
+		'if' statement can be simplified less... (Ctrl+F1)
+		Reports if statements which can be simplified to single assignment or return statements.
+		For example:
+        if (foo()) {
+		return true;
+		} else {
+		 return false;
+		}
+		can be simplified to
+        return foo();
+		*/
+		return ch == operators[0] || ch == operators[1];
 	}
 	
 	private static boolean isOperator(char ch){
-		if(ch == operators[2] || ch == operators[3])
-			return true;
-		return isAddOrSub(ch);
+		/*What IntelliJ IDEA told me:'if' statement can be replaced with 'return ch == operators[2] || ch == operators[3] || isAddOrSub(ch);'*/
+		/*WTF!*/
+		return ch == operators[2] || ch == operators[3] || isAddOrSub(ch);
 	}
 }

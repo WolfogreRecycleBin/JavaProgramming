@@ -11,7 +11,7 @@ public class TestAnalyser {
 			if(input.isEmpty())
 				break;
 			try{
-				System.out.println("值为:" + Analyser.analy(input));
+				System.out.println("值为:" + Analyser.analyse(input));
 			}catch(Exception ex){
 				System.out.println("输入有误!");
 			}

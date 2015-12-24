@@ -1,4 +1,4 @@
-package shu.gobang.ai;
+package wolfogre.gobang.ai;
 
 import java.util.Scanner;
 

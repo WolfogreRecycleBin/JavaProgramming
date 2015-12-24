@@ -1,4 +1,4 @@
-package shu.gobang.server;
+package wolfogre.gobang.server;
 
 public class TestGobangSever_Sever {
 	public static void main(String args[]) throws Exception{

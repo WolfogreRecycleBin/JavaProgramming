@@ -1,4 +1,4 @@
-package shu.gobang.ai;
+package wolfogre.gobang.ai;
 
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 12/24/2015.

@@ -1,4 +1,4 @@
-package shu.gobang.server;
+package wolfogre.gobang.server;
 
 import java.util.Scanner;
 import java.net.DatagramPacket;

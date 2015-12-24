@@ -19,7 +19,7 @@ public class TestAI {
 				myTurn = false;
 			}else{
 				System.out.println("AI moving...");
-				ai.move(board,1,2);
+				ai.move(board,2);
 				myTurn = true;
 			}
 			for(int[] vs : board) {

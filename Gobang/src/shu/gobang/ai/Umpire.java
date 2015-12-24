@@ -34,7 +34,7 @@ public class Umpire {
 	}
 
 	private boolean checkWinnerHelp(int who, int remain, int row, int col, int rowMove, int colMove){
-		if(remain == 0)
+		if(remain == 1 && board[row][col] == who)
 			return true;
 		if(board[row][col] != who)
 			return false;

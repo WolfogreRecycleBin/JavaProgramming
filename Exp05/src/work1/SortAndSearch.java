@@ -18,8 +18,7 @@ public class SortAndSearch {
 		while(scanner.hasNextInt() && count < MAX_LENGTH)
 			input[count++] = scanner.nextInt();
 		int[] numbers = new int[count];
-		for(int i = 0; i < count; ++i)
-			numbers[i] = input[i];
+		System.arraycopy(input, 0, numbers, 0, count);
 		//TODO:it would be better to use List
 
 		{

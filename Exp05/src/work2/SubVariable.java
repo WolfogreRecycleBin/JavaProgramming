@@ -8,7 +8,7 @@ public class SubVariable extends ParentVariable {
 	String memberString = "I am belong to SubVariable, I am member variable";
 
 	public String getParentStaticString(){
-		return super.staticString;
+		return ParentVariable.staticString;
 	}
 
 	public String getParentMemberString(){

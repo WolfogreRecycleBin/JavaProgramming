@@ -66,7 +66,7 @@ public abstract class Student {
 		return score;
 	}
 
-	public void setScore(double[] score) {
+	public void setScore(double ... score) {
 		this.score = score;
 	}
 

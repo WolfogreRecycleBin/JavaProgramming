@@ -13,7 +13,7 @@ public class StudentApplication {
 		undergraduate.setSchool("Shanghai University");
 		undergraduate.setStuId("11128981");
 		undergraduate.setCategory(Constants.UNDERGRADUATE);
-		undergraduate.setScore(new double[] {89.5, 82, 87, 73});
+		undergraduate.setScore(89.5, 82, 87, 73);
 		undergraduate.setStatus(false);
 
 		Master master = new Master();
@@ -23,7 +23,7 @@ public class StudentApplication {
 		master.setSchool("Shanghai University");
 		master.setStuId("10306");
 		master.setCategory(Constants.MASTER);
-		master.setScore(new double[] {70, 52.5, 95, 88, 89, 91});
+		master.setScore(70, 52.5, 95, 88, 89, 91);
 		master.setThesisLevel('B');
 		master.setStatus(false);
 

@@ -3,7 +3,6 @@
  */
 public class StudentDegree {
 	public void printStudentInfo(Student student){
-		//姓名、性别、出生日期、学校、学号、学生类别、平均成绩、平均分
 		System.out.println("Name: " + student.getName());
 		System.out.println("Gender: " + student.getGender());
 		System.out.println("BirthDay: " + student.getBirthDay().getYear() + "-" + student.getBirthDay().getMonth() + "-" + student.getBirthDay().getDate());

@@ -1,5 +1,5 @@
 # For IntelliJ IDEA
-JavaProgramming.iws
+*.iws
 .idea/dataSources.local.xml
 out/
 .idea/workspace.xml

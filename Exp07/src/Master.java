@@ -15,7 +15,7 @@ public class Master extends Student implements DegreeManageable{
 		try{
 			return status = (computeAverage() > 80 && thesisLevel <= 'C');
 		} catch (Exception e) {
-			return false;
+			return status = false;
 		}
 	}
 

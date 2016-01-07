@@ -10,7 +10,7 @@ public class Undergraduate extends Student  implements DegreeManageable{
 		try {
 			return status = (computeAverage() > 60);
 		} catch (UndergraduateException e) {
-			return false;
+			return status = false;
 		}
 	}
 

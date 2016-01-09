@@ -24,6 +24,8 @@ public class ServiceThread extends Thread {
 			scanner = new Scanner(socket.getInputStream());
 			printWriter = new PrintWriter(socket.getOutputStream());
 			while(true){
+				if(!scanner.hasNextLine())
+					continue;
 				String str = scanner.nextLine();
 				if(str.equals("bye"))
 					break;
@@ -36,17 +38,20 @@ public class ServiceThread extends Thread {
 					Date now = new Date();
 					SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 					String timeStr = dateFormat.format(now);
-					printWriter.println(timeStr);
+					printWriter.println("time is " + timeStr);
 					printWriter.flush();
 					continue;
 				}
 				printWriter.println("what?");
 				printWriter.flush();
 			}
-		}catch(Exception e){e.printStackTrace();}finally{
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
 			try{
-				System.out.println("πÿ±’¡¨Ω”:"+socket.getInetAddress()+":"+socket.getPort());
-				if(socket!=null)socket.close();
+				System.out.println("Disconnect::"+socket.getInetAddress()+":"+socket.getPort());
+				if(socket != null && socket.isConnected())
+					socket.close();
 			}catch(IOException e){
 				e.printStackTrace();
 			}

@@ -24,8 +24,8 @@ public class ServiceThread extends Thread {
 			scanner = new Scanner(socket.getInputStream());
 			printWriter = new PrintWriter(socket.getOutputStream());
 			while(true){
-				if(!scanner.hasNextLine())
-					continue;
+				if(!scanner.hasNext())
+					break;
 				String str = scanner.nextLine();
 				if(str.equals("bye"))
 					break;

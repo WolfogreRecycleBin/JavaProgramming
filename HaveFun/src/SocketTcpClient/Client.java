@@ -13,7 +13,6 @@ public abstract class Client {
 	InetAddress inetAddress;
 	int port;
 	Socket socket;
-	ListenThread listenThread;
 
 	public Client(InetAddress inetAddress, int port){
 		this.inetAddress =inetAddress;
@@ -24,14 +23,13 @@ public abstract class Client {
 
 	final public void connect() throws IOException {
 		socket = new Socket(inetAddress , port);
-		listenThread = new ListenThread(socket,this);
+		ListenThread listenThread;listenThread = new ListenThread(socket,this);
 		listenThread.start();
 	}
 
 	final public void disconnect() throws IOException {
 		if(socket != null && !socket.isConnected())
 			socket.close();
-		listenThread.stop();
 	}
 
 	final public void send(String string) throws IOException {

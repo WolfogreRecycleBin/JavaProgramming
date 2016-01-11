@@ -17,16 +17,13 @@ class ListenThread extends Thread {
 	}
 	@Override
 	public void run(){
-		while(socket != null && socket.isConnected()){
-			try {
-				Scanner scanner = new Scanner(socket.getInputStream());
-				if(scanner.hasNext()) {
+		try {
+			Scanner scanner = new Scanner(socket.getInputStream());
+			while(scanner.hasNext()){
 					client.onReceive(scanner.nextLine());
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-				break;
 			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }

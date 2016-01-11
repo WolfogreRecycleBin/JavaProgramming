@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TCPClient">
+    <output-path>$PROJECT_DIR$/out/artifacts/TCPClient</output-path>
+    <root id="archive" name="TCPClient.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/HaveFun/src/SocketTcpClient/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="HaveFun" />
+    </root>
+  </artifact>
+</component>

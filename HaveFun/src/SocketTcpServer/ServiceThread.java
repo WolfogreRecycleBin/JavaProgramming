@@ -1,4 +1,4 @@
-package SocketTCP;
+package SocketTcpServer;
 
 import java.io.IOException;
 import java.io.PrintWriter;

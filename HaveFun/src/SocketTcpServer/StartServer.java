@@ -1,6 +1,4 @@
-package SocketTCP;
-
-import java.io.IOException;
+package SocketTcpServer;
 
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 01/09/2016.

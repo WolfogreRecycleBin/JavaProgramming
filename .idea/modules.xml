@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/GamePlatform/GamePlatform.iml" filepath="$PROJECT_DIR$/GamePlatform/GamePlatform.iml" />
       <module fileurl="file://$PROJECT_DIR$/Gobang/Gobang.iml" filepath="$PROJECT_DIR$/Gobang/Gobang.iml" />
       <module fileurl="file://$PROJECT_DIR$/HaveFun/HaveFun.iml" filepath="$PROJECT_DIR$/HaveFun/HaveFun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MySqlJDBC/MySqlJDBC.iml" filepath="$PROJECT_DIR$/MySqlJDBC/MySqlJDBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/RemoteIO/RemoteIO.iml" filepath="$PROJECT_DIR$/RemoteIO/RemoteIO.iml" />
     </modules>
   </component>
